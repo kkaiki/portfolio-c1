@@ -3,55 +3,787 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnovateTech Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>InnovateTech Solutions - Cutting-Edge Technology Services</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #10b981;
+            --background: #0f172a;
+            --text: #e2e8f0;
+            --accent: #f472b6;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.5rem;
+            background: conic-gradient(from 0deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .section {
+            padding: 6rem 0;
+            min-height: 100vh;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .news-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: var(--primary);
+            color: var(--text);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-button:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4rem 0;
+            margin-top: 6rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            color: var(--text);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 100px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: var(--background);
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--primary);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--primary);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--primary);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--primary) transparent transparent;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            position: relative;
+            border-radius: 6px;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid var(--primary);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--primary) transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 15px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">InnovateTech</a>
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                InnovateTech
+            </a>
             <nav>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#news" class="nav-link">News</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#careers" class="nav-link">Careers</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Innovate Your Future</h1>
-                    <p>Empowering businesses with cutting-edge technology solutions for the digital age.</p>
-                    <a href="contact.html" class="cta-button">Get Started</a>
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Innovate Your Future with Cutting-Edge Technology</h1>
+                        <p class="hero-description">Empowering businesses with advanced AI, blockchain, and IoT solutions to drive growth and efficiency in the digital age.</p>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="features page-section">
+        <section id="about" class="section">
             <div class="container">
-                <h2 class="section-title">Our Key Features</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-brain feature-icon"></i>
-                        <h3>AI Solutions</h3>
-                        <p>Harness the power of artificial intelligence to optimize your business processes.</p>
+                <h2 class="section-title">About Us</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title">Our Mission</h3>
+                        <p>At InnovateTech, our mission is to empower businesses with innovative technology solutions that drive growth, efficiency, and sustainability in the digital age. We strive to be at the forefront of technological advancements, constantly pushing the boundaries of what's possible in AI, blockchain, and IoT.</p>
+                        <p>Our goal is to help organizations of all sizes harness the power of cutting-edge technology to solve complex problems, streamline operations, and create new opportunities for success. We believe that by leveraging the latest innovations, we can contribute to a more connected, efficient, and sustainable world.</p>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-link feature-icon"></i>
-                        <h3>Blockchain Integration</h3>
-                        <p>Implement secure and transparent blockchain solutions for your data management.</p>
+                    <div class="card">
+                        <h3 class="card-title">Our Vision</h3>
+                        <p>Our vision is to be the global leader in providing cutting-edge AI, blockchain, and IoT solutions that transform industries and improve lives. We see a future where technology seamlessly integrates into every aspect of business and society, creating smarter, more efficient systems that benefit everyone.</p>
+                        <p>We envision a world where AI-driven insights lead to better decision-making, blockchain ensures transparency and security in all transactions, and IoT connects devices in ways that enhance our daily lives and work environments. Through our innovative solutions, we aim to be at the forefront of this technological revolution, shaping the future of how businesses operate and how people interact with technology.</p>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-network-wired feature-icon"></i>
-                        <h3>IoT Ecosystems</h3>
-                        <p>Connect and control your devices with our advanced IoT solutions.</p>
+                    <div class="card">
+                        <h3 class="card-title">Our Values</h3>
+                        <ul>
+                            <li><strong>Innovation:</strong> We constantly seek new ideas and approaches to solve complex problems and drive technological advancements.</li>
+                            <li><strong>Integrity:</strong> We uphold the highest ethical standards in all our dealings, ensuring trust and transparency with our clients and partners.</li>
+                            <li><strong>Collaboration:</strong> We believe in the power of teamwork and foster a collaborative environment both internally and with our clients.</li>
+                            <li><strong>Excellence:</strong> We strive for excellence in everything we do, from the solutions we develop to the service we provide.</li>
+                            <li><strong>Customer-centricity:</strong> Our clients' success is our success. We prioritize understanding and meeting their unique needs and challenges.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h2>2010</h2>
+                            <p>InnovateTech is founded with a vision to revolutionize the tech industry.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h2>2013</h2>
+                            <p>Launch of our first AI-powered analytics platform, marking our entry into the AI market.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h2>2016</h2>
+                            <p>Expansion into blockchain technology with the release of our decentralized ledger solution.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h2>2018</h2>
+                            <p>Introduction of our comprehensive IoT ecosystem, connecting devices across industries.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h2>2020</h2>
+                            <p>Achieved milestone of serving 1000+ clients globally across various sectors.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h2>2023</h2>
+                            <p>Launch of our integrated AI-Blockchain-IoT platform, setting new industry standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3 class="card-title">AI Solutions</h3>
+                        <p>Harness the power of artificial intelligence to optimize your business processes and gain valuable insights. Our AI solutions include:</p>
+                        <ul>
+                            <li>Machine Learning Models for Predictive Analytics</li>
+                            <li>Natural Language Processing for Customer Interaction</li>
+                            <li>Computer Vision for Quality Control and Security</li>
+                            <li>AI-Driven Decision Support Systems</li>
+                        </ul>
+                        <p>We tailor our AI solutions to your specific industry needs, whether it's finance, healthcare, manufacturing, or retail. Our team of expert data scientists and AI engineers work closely with you to develop and implement AI systems that drive real business value.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔗</div>
+                        <h3 class="card-title">Blockchain Integration</h3>
+                        <p>Implement secure and transparent blockchain solutions to revolutionize your data management and transactions. Our blockchain services include:</p>
+                        <ul>
+                            <li>Smart Contract Development and Auditing</li>
+                            <li>Decentralized Application (DApp) Creation</li>
+                            <li>Supply Chain Tracking and Verification</li>
+                            <li>Cryptocurrency and Token Development</li>
+                        </ul>
+                        <p>We help businesses across various sectors leverage blockchain technology to enhance security, improve transparency, and streamline operations. Our blockchain experts can guide you through the entire process, from concept to implementation and beyond.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📡</div>
+                        <h3 class="card-title">IoT Ecosystems</h3>
+                        <p>Connect and control your devices with our advanced IoT solutions, enabling smart decision-making and automation. Our IoT services encompass:</p>
+                        <ul>
+                            <li>IoT Device Design and Prototyping</li>
+                            <li>Sensor Network Implementation</li>
+                            <li>Real-time Data Analytics and Visualization</li>
+                            <li>IoT Security and Privacy Solutions</li>
+                        </ul>
+                        <p>From smart homes to industrial IoT, we design and implement comprehensive IoT ecosystems that help you gather valuable data, automate processes, and make informed decisions in real-time. Our IoT solutions are scalable and can be integrated with our AI and blockchain offerings for even more powerful results.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Data Analytics</h3>
+                        <p>Unlock the potential of your data with our advanced analytics solutions, providing actionable insights for informed decision-making. Our data analytics services include:</p>
+                        <ul>
+                            <li>Big Data Processing and Management</li>
+                            <li>Predictive and Prescriptive Analytics</li>
+                            <li>Data Visualization and Reporting</li>
+                            <li>Custom Analytics Dashboards</li>
+                        </ul>
+                        <p>We help you turn your raw data into valuable insights that drive business growth. Our team of data analysts and scientists use cutting-edge tools and techniques to process, analyze, and visualize your data, enabling you to make data-driven decisions with confidence.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔒</div>
+                        <h3 class="card-title">Cybersecurity</h3>
+                        <p>Protect your digital assets with our state-of-the-art cybersecurity solutions. Our comprehensive security services include:</p>
+                        <ul>
+                            <li>Vulnerability Assessment and Penetration Testing</li>
+                            <li>Security Information and Event Management (SIEM)</li>
+                            <li>Incident Response and Forensics</li>
+                            <li>Employee Security Awareness Training</li>
+                        </ul>
+                        <p>In an increasingly connected world, robust cybersecurity is crucial. Our team of security experts employs the latest technologies and best practices to safeguard your systems, networks, and data from evolving cyber threats.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">☁️</div>
+                        <h3 class="card-title">Cloud Solutions</h3>
+                        <p>Leverage the power of cloud computing to scale your business, improve collaboration, and reduce infrastructure costs. Our cloud services include:</p>
+                        <ul>
+                            <li>Cloud Migration and Strategy</li>
+                            <li>Multi-Cloud and Hybrid Cloud Management</li>
+                            <li>Cloud-Native Application Development</li>
+                            <li>Serverless Computing Solutions</li>
+                        </ul>
+                        <p>We help businesses of all sizes harness the full potential of cloud technology. Whether you're looking to migrate existing systems to the cloud or build new cloud-native applications, our cloud experts can guide you through every step of the process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="section">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="grid">
+                    <div class="card">
+                        <p class="news-date">May 15, 2023</p>
+                        <h3 class="card-title">InnovateTech Launches Revolutionary AI-Powered Analytics Platform</h3>
+                        <p>We're thrilled to announce the launch of our new AI-powered analytics platform, InnovateTech Insights. This cutting-edge solution combines advanced machine learning algorithms with intuitive data visualization tools to help businesses make data-driven decisions faster and more accurately than ever before.</p>
+                        <p>Key features of InnovateTech Insights include:</p>
+                        <ul>
+                            <li>Real-time data processing and analysis</li>
+                            <li>Predictive modeling with high accuracy rates</li>
+                            <li>Customizable dashboards for different user roles</li>
+                            <li>Natural language query capabilities</li>
+                            <li>Integration with popular data sources and business tools</li>
+                        </ul>
+                        <p>Early adopters of InnovateTech Insights have reported significant improvements in their decision-making processes, with some seeing up to a 30% increase in operational efficiency. We're excited to see how this platform will transform businesses across various industries.</p>
+                    </div>
+                    <div class="card">
+                        <p class="news-date">April 3, 2023</p>
+                        <h3 class="card-title">InnovateTech Partners with Leading IoT Device Manufacturer</h3>
+                        <p>We're excited to announce our strategic partnership with SmartTech Devices, a leading manufacturer of IoT devices. This collaboration aims to bring cutting-edge smart home and industrial IoT solutions to the market, combining SmartTech's hardware expertise with InnovateTech's software and analytics capabilities.</p>
+                        <p>The partnership will focus on developing:</p>
+                        <ul>
+                            <li>Advanced smart home systems with AI-driven automation</li>
+                            <li>Industrial IoT solutions for predictive maintenance and process optimization</li>
+                            <li>Secure, blockchain-enabled IoT devices for enhanced data integrity</li>
+                            <li>Integrated IoT ecosystems for smart cities and urban planning</li>
+                        </ul>
+                        <p>This collaboration represents a significant step forward in our mission to create more connected and efficient environments. We look forward to unveiling our first joint products in the coming months.</p>
+                    </div>
+                    <div class="card">
+                        <p class="news-date">March 12, 2023</p>
+                        <h3 class="card-title">InnovateTech Recognized as Top Blockchain Solutions Provider</h3>
+                        <p>We're honored to announce that InnovateTech has been recognized as a top blockchain solutions provider by TechInnovate Magazine, a leading publication in the technology industry. This recognition highlights our commitment to innovation and excellence in blockchain technology.</p>
+                        <p>The award specifically acknowledged our contributions in:</p>
+                        <ul>
+                            <li>Developing secure and scalable blockchain infrastructures</li>
+                            <li>Creating innovative smart contract solutions for various industries</li>
+                            <li>Implementing blockchain-based supply chain tracking systems</li>
+                            <li>Advancing the field of decentralized finance (DeFi)</li>
+                        </ul>
+                        <p>This recognition is a testament to the hard work and dedication of our blockchain team. We're proud of what we've accomplished and excited about the future of blockchain technology. We remain committed to pushing the boundaries of what's possible with blockchain and delivering value to our clients.</p>
+                    </div>
+                    <div class="card">
+                        <p class="news-date">February 20, 2023</p>
+                        <h3 class="card-title">InnovateTech Expands AI Research Division</h3>
+                        <p>We're pleased to announce the expansion of our AI Research Division, marking a significant investment in the future of artificial intelligence. This expansion includes the opening of a new AI research lab and the hiring of top AI researchers and scientists from around the world.</p>
+                        <p>The expanded AI Research Division will focus on:</p>
+                        <ul>
+                            <li>Advancing natural language processing and understanding</li>
+                            <li>Developing more efficient and explainable AI models</li>
+                            <li>Exploring the intersection of AI and quantum computing</li>
+                            <li>Ethical AI development and implementation</li>
+                        </ul>
+                        <p>This expansion reinforces our commitment to staying at the forefront of AI technology. We believe that the breakthroughs made in this division will not only enhance our existing products and services but also contribute to the broader field of AI research.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title">Get in Touch</h3>
+                        <p>We'd love to hear from you. Whether you have a question about our services, need technical support, or want to explore how we can help your business, our team is ready to assist you.</p>
+                        <ul>
+                            <li><strong>General Inquiries:</strong> info@innovatetech.com</li>
+                            <li><strong>Sales:</strong> sales@innovatetech.com</li>
+                            <li><strong>Support:</strong> support@innovatetech.com</li>
+                            <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+                            <li><strong>Address:</strong> 123 Tech Street, Innovation City, CA 94043, USA</li>
+                        </ul>
+                        <p>Our office hours are Monday to Friday, 9:00 AM to 6:00 PM (PST).</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Send Us a Message</h3>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="careers" class="section">
+            <div class="container">
+                <h2 class="section-title">Join Our Team</h2>
+                <div class="card">
+                    <h3 class="card-title">Why Work at InnovateTech?</h3>
+                    <p>At InnovateTech, we're not just building technology; we're shaping the future. We offer a dynamic and innovative work environment where you can grow your skills, tackle exciting challenges, and make a real impact. Here's why you should consider a career with us:</p>
+                    <ul>
+                        <li><strong>Cutting-edge Projects:</strong> Work on the latest technologies in AI, blockchain, and IoT.</li>
+                        <li><strong>Professional Growth:</strong> Continuous learning opportunities and career development programs.</li>
+                        <li><strong>Collaborative Culture:</strong> A supportive team environment that fosters creativity and innovation.</li>
+                        <li><strong>Work-Life Balance:</strong> Flexible work arrangements and a focus on employee well-being.</li>
+                        <li><strong>Competitive Compensation:</strong> Attractive salary packages and comprehensive benefits.</li>
+                        <li><strong>Global Impact:</strong> Opportunity to work on projects that make a difference worldwide.</li>
+                    </ul>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title">AI Research Scientist</h3>
+                        <p>We're seeking an experienced AI Research Scientist to join our team and help develop groundbreaking AI solutions. In this role, you will:</p>
+                        <ul>
+                            <li>Conduct cutting-edge research in machine learning and deep learning</li>
+                            <li>Develop novel AI algorithms and models</li>
+                            <li>Collaborate with cross-functional teams to apply AI research to real-world problems</li>
+                            <li>Publish research findings in top-tier conferences and journals</li>
+                        </ul>
+                        <p><strong>Requirements:</strong> Ph.D. in Computer Science, Machine Learning, or related field; 5+ years of experience in AI research; strong publication record.</p>
+                        <a href="#" class="cta-button">Apply Now</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Blockchain Developer</h3>
+                        <p>Join our blockchain team to create innovative decentralized applications and smart contracts. As a Blockchain Developer, you will:</p>
+                        <ul>
+                            <li>Design and implement blockchain-based solutions</li>
+                            <li>Develop and audit smart contracts</li>
+                            <li>Integrate blockchain with other technologies like AI and IoT</li>
+                            <li>Contribute to the development of our blockchain infrastructure</li>
+                        </ul>
+                        <p><strong>Requirements:</strong> Bachelor's degree in Computer Science or related field; 3+ years of experience in blockchain development; proficiency in Solidity and Web3.js.</p>
+                        <a href="#" class="cta-button">Apply Now</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">IoT Systems Engineer</h3>
+                        <p>Help design and implement IoT ecosystems for our clients as part of our growing IoT team. In this role, you will:</p>
+                        <ul>
+                            <li>Architect and develop IoT solutions for various industries</li>
+                            <li>Work on sensor integration and data collection systems</li>
+                            <li>Implement secure communication protocols for IoT devices</li>
+                            <li>Collaborate with the AI team to develop smart IoT applications</li>
+                        </ul>
+                        <p><strong>Requirements:</strong> Bachelor's degree in Electrical Engineering or Computer Science; 3+ years of experience in IoT development; familiarity with IoT protocols and hardware.</p>
+                        <a href="#" class="cta-button">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -60,8 +792,85 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 InnovateTech Solutions. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>InnovateTech</h3>
+                    <p>Empowering the future with innovative technology solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>123 Tech Street, Innovation City, 12345</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@innovatetech.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">🔗</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+
+        function activateSection(sectionId) {
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('href').substring(1);
+                activateSection(sectionId);
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.9)';
+                header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.8)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
