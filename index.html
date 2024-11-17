@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovateTech Solutions - Cutting-Edge Technology Services</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #10b981;
+            --background: #0f172a;
+            --text: #e2e8f0;
+            --accent: #f472b6;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.5rem;
+            background: conic-gradient(from 0deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .services-grid,
+        .features-grid,
+        .portfolio-grid,
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card,
+        .feature-item,
+        .portfolio-item,
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before,
+        .feature-item::before,
+        .portfolio-item::before,
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before,
+        .feature-item:hover::before,
+        .portfolio-item:hover::before,
+        .pricing-card:hover::before {
+            opacity: 0.1;
+            transform: translate(25%, 25%);
+        }
+
+        .service-card:hover,
+        .feature-item:hover,
+        .portfolio-item:hover,
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon,
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-title,
+        .feature-title,
+        .portfolio-title,
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.05);
+        }
+
+        .pricing-price {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--secondary);
+            margin-right: 0.5rem;
+        }
+
+        .testimonials {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial {
+            flex: 0 0 100%;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: var(--primary);
+            color: var(--text);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-button:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4rem 0;
+            margin-top: 6rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            color: var(--text);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* New styles for additional gimmicks */
+        .parallax-section {
+            position: relative;
+            height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .parallax-content {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .mouse-parallax {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .mouse-parallax-bg {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            background-image: url('/placeholder.svg?height=400&width=1200');
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.2s ease-out;
+        }
+
+        .mouse-parallax-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--text);
+            text-align: center;
+            padding: 2rem;
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--primary);
+            z-index: 9999;
+        }
+
+        .typing-effect::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .services-grid,
+            .features-grid,
+            .portfolio-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .parallax-section {
+                background-attachment: scroll;
+            }
+        }
+
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1rem 0;
+            color: var(--text);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 300px;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                InnovateTech
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content animate-on-scroll">
+                    <h1 class="hero-title typing-effect" id="typing-effect">Innovate Your Future with Cutting-Edge Technology</h1>
+                    <p class="hero-description">Empowering businesses with advanced AI, blockchain, and IoT solutions to drive growth and efficiency in the digital age.</p>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">About Us</h2>
+                <div class="about-content animate-on-scroll">
+                    <p>InnovateTech is a leading technology solutions provider, specializing in AI, blockchain, and IoT. We help businesses transform their operations and stay ahead in the rapidly evolving digital landscape.</p>
+                    <p>Our team of expert engineers and developers are passionate about creating innovative solutions that solve real-world problems and drive business growth. With years of experience in the tech industry, we have successfully delivered projects for clients across various sectors, including finance, healthcare, manufacturing, and retail.</p>
+                    <p>At InnovateTech, we believe in the power of technology to create positive change. Our mission is to empower businesses with cutting-edge solutions that not only improve efficiency and productivity but also contribute to a more sustainable and connected world.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="parallax-section" style="background-image: url('/placeholder.svg?height=400&width=1200');">
+            <div class="parallax-content">
+                <h2>Transforming Industries with Technology</h2>
+                <p>Experience the power of AI, Blockchain, and IoT</p>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">🤖</div>
+                        <h3 class="service-title">AI Solutions</h3>
+                        <p>Harness the power of artificial intelligence to optimize your business processes and gain valuable insights.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">🔗</div>
+                        <h3 class="service-title">Blockchain Integration</h3>
+                        <p>Implement secure and transparent blockchain solutions to revolutionize your data management and transactions.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">📡</div>
+                        <h3 class="service-title">IoT Ecosystems</h3>
+                        <p>Connect and control your devices with our advanced IoT solutions, enabling smart decision-making and automation.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">📊</div>
+                        <h3 class="service-title">Data Analytics</h3>
+                        <p>Unlock the potential of your data with our advanced analytics solutions, providing actionable insights for informed decision-making.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">🔒</div>
+                        <h3 class="service-title">Cybersecurity</h3>
+                        <p>Protect your digital assets with our state-of-the-art cybersecurity solutions, ensuring the safety and integrity of your data.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">☁️</div>
+                        <h3 class="service-title">Cloud Solutions</h3>
+                        <p>Leverage the power of cloud computing to scale your business, improve collaboration, and reduce infrastructure costs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item animate-on-scroll floating">
+                        <div class="feature-icon">🚀</div>
+                        <h3 class="feature-title">Scalable Solutions</h3>
+                        <p class="feature-description">Our technology grows with your business, ensuring long-term success and adaptability.</p>
+                    </div>
+                    <div class="feature-item animate-on-scroll floating">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Enhanced Security</h3>
+                        <p class="feature-description">State-of-the-art security measures to protect your data and operations.</p>
+                    </div>
+                    <div class="feature-item animate-on-scroll floating">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Data-Driven Insights</h3>
+                        <p class="feature-description">Leverage advanced analytics to make informed decisions and drive growth.</p>
+                    </div>
+                    <div class="feature-item animate-on-scroll floating">
+                        <div class="feature-icon">🔧</div>
+                        <h3 class="feature-title">Customizable Solutions</h3>
+                        <p class="feature-description">Tailor-made solutions designed to meet your specific business needs and challenges.</p>
+                    </div>
+                    <div class="feature-item animate-on-scroll floating">
+                        <div class="feature-icon">🌐</div>
+                        <h3 class="feature-title">Global Reach</h3>
+                        <p class="feature-description">Expand your business globally with our internationally compatible solutions.</p>
+                    </div>
+                    <div class="feature-item animate-on-scroll floating">
+                        <div class="feature-icon">🤝</div>
+                        <h3 class="feature-title">24/7 Support</h3>
+                        <p class="feature-description">Round-the-clock technical support to ensure your systems run smoothly at all times.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mouse-parallax">
+            <div class="mouse-parallax-bg" id="mouse-parallax-bg"></div>
+            <div class="mouse-parallax-content">
+                <h2>Experience the Future of Technology</h2>
+                <p>Innovative solutions for the digital age</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="/placeholder.svg?height=200&width=300" alt="AI-Powered Inventory Management" class="portfolio-image">
+                        <h3 class="portfolio-title">AI-Powered Inventory Management</h3>
+                        <p>Revolutionized inventory management for a major retailer, reducing waste by 30% and improving stock accuracy by 95%.</p>
+                    </div>
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Blockchain-Based Supply Chain" class="portfolio-image">
+                        <h3 class="portfolio-title">Blockchain-Based Supply Chain</h3>
+                        <p>Implemented a transparent and secure supply chain solution for a global manufacturer, increasing traceability and reducing fraud.</p>
+                    </div>
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Smart City IoT Network" class="portfolio-image">
+                        <h3 class="portfolio-title">Smart City IoT Network</h3>
+                        <p>Developed a comprehensive IoT network for a smart city project, optimizing energy usage and improving public services.</p>
+                    </div>
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Predictive Maintenance System" class="portfolio-image">
+                        <h3 class="portfolio-title">Predictive Maintenance System</h3>
+                        <p>Created an AI-driven predictive maintenance system for a manufacturing plant, reducing downtime by 40% and maintenance costs by 25%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Pricing Plans</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card animate-on-scroll">
+                        <h3 class="pricing-title">Starter</h3>
+                        <div class="pricing-price">$999/mo</div>
+                        <ul class="pricing-features">
+                            <li>AI-powered analytics</li>
+                            <li>Basic IoT integration</li>
+                            <li>Cloud storage (100GB)</li>
+                            <li>24/7 email support</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                    <div class="pricing-card animate-on-scroll">
+                        <h3 class="pricing-title">Professional</h3>
+                        <div class="pricing-price">$2,499/mo</div>
+                        <ul class="pricing-features">
+                            <li>Advanced AI solutions</li>
+                            <li>Full IoT ecosystem</li>
+                            <li>Blockchain integration</li>
+                            <li>Cloud storage (1TB)</li>
+                            <li>24/7 priority support</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                    <div class="pricing-card animate-on-scroll">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <div class="pricing-price">Custom</div>
+                        <ul class="pricing-features">
+                            <li>Customized AI & ML models</li>
+                            <li>Advanced IoT & blockchain solutions</li>
+                            <li>Unlimited cloud storage</li>
+                            <li>Dedicated account manager</li>
+                            <li>On-site support</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section testimonials">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
+                <div class="testimonial-container" id="testimonial-slider">
+                    <div class="testimonial animate-on-scroll">
+                        <p class="testimonial-text">"InnovateTech's AI solutions have transformed our business operations, resulting in a 30% increase in efficiency."</p>
+                        <p class="testimonial-author">- John Doe, CEO of TechCorp</p>
+                    </div>
+                    <div class="testimonial animate-on-scroll">
+                        <p class="testimonial-text">"The blockchain integration provided by InnovateTech has revolutionized our supply chain management."</p>
+                        <p class="testimonial-author">- Jane Smith, CTO of LogisTech</p>
+                    </div>
+                    <div class="testimonial animate-on-scroll">
+                        <p class="testimonial-text">"Thanks to InnovateTech's IoT ecosystem, we've achieved unprecedented levels of automation and control."</p>
+                        <p class="testimonial-author">- Mike Johnson, COO of SmartFactories</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Technologies We Use</h2>
+                <div class="tech-icons">
+                    <div class="tech-icon" title="Artificial Intelligence">🧠</div>
+                    <div class="tech-icon" title="Blockchain">🔗</div>
+                    <div class="tech-icon" title="Internet of Things">📡</div>
+                    <div class="tech-icon" title="Cloud Computing">☁️</div>
+                    <div class="tech-icon" title="Big Data">📊</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Contact Us</h2>
+                <form class="contact-form animate-on-scroll">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Frequently Asked Questions</h2>
+                <div class="faq-accordion animate-on-scroll">
+                    <div class="faq-item">
+                        <button class="faq-question">What technologies do you specialize in?</button>
+                        <div class="faq-answer">
+                            <p>We specialize in cutting-edge technologies including Artificial Intelligence, Blockchain, Internet of Things (IoT), Cloud Computing, and Big Data Analytics.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How can AI benefit my business?</button>
+                        <div class="faq-answer">
+                            <p>AI can benefit your business by automating processes, providing data-driven insights, improving customer experiences, and helping you make more informed decisions.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What industries do you serve?</button>
+                        <div class="faq-answer">
+                            <p>We serve a wide range of industries including finance, healthcare, manufacturing, retail, and more. Our solutions are adaptable to various sectors.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you ensure data security?</button>
+                        <div class="faq-answer">
+                            <p>We implement state-of-the-art security measures, including encryption, secure cloud storage, and regular security audits to ensure the safety and integrity of your data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>InnovateTech</h3>
+                    <p>Empowering the future with innovative technology solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>123 Tech Street, Innovation City, 12345</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@innovatetech.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">🔗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.9)';
+                header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.8)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Testimonial slider
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        let currentTestimonial = 0;
+        const testimonials = testimonialSlider.children;
+
+        function showNextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            testimonialSlider.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+        }
+
+        setInterval(showNextTestimonial, 5000);
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                } else {
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mouse parallax effect
+        const mouseParallaxBg = document.getElementById('mouse-parallax-bg');
+        const mouseParallaxSection = document.querySelector('.mouse-parallax');
+
+        mouseParallaxSection.addEventListener('mousemove', (e) => {
+            const { offsetWidth: width, offsetHeight: height } = mouseParallaxSection;
+            const { clientX: x, clientY: y } = e;
+            const moveX = (x / width - 0.5) * 20;
+            const moveY = (y / height - 0.5) * 20;
+            mouseParallaxBg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scroll-progress');
+            const scrollPx = document.documentElement.scrollTop;
+            const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = `${scrollPx / winHeightPx * 100}%`;
+            scrollProgress.style.width = scrolled;
+        });
+
+        // Typing effect
+        const typingEffect = document.getElementById('typing-effect');
+        const text = typingEffect.textContent;
+        typingEffect.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typingEffect.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+
+        typeWriter();
+
+        // Tech icons hover effect
+        document.querySelectorAll('.tech-icon').forEach(icon => {
+            icon.addEventListener('mouseover', () => {
+                icon.style.transform = 'scale(1.2) rotate(10deg)';
+            });
+            icon.addEventListener('mouseout', () => {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+
+                // Close all other open questions
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    }
+                });
+
+                // Toggle the clicked question
+                question.classList.toggle('active');
+                answer.classList.toggle('active');
+
+                // Adjust max-height for smooth animation
+                if (!isActive) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
