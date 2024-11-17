@@ -6,11 +6,11 @@
     <title>InnovateTech Solutions - Cutting-Edge Technology Services</title>
     <style>
         :root {
-            --primary: #6366f1;
-            --secondary: #10b981;
+            --primary: #7C7EFF;
+            --secondary: #12D892;
             --background: #0f172a;
-            --text: #e2e8f0;
-            --accent: #f472b6;
+            --text: #FFFFFF;
+            --accent: #FF85C0;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
@@ -449,6 +449,95 @@
                 left: 0%;
             }
         }
+
+        /* FAQ Accordion Styles */
+        .faq-accordion {
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1rem;
+        }
+
+        /* Image Gallery Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--text);
+            padding: 0.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -464,6 +553,8 @@
                     <li><a href="#about" class="nav-link">About Us</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#news" class="nav-link">News</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                     <li><a href="#careers" class="nav-link">Careers</a></li>
                 </ul>
@@ -625,6 +716,117 @@
                             <li>Serverless Computing Solutions</li>
                         </ul>
                         <p>We help businesses of all sizes harness the full potential of cloud technology. Whether you're looking to migrate existing systems to the cloud or build new cloud-native applications, our cloud experts can guide you through every step of the process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">What technologies do you specialize in?</button>
+                        <div class="faq-answer">
+                            <p>We specialize in AI, Machine Learning, Blockchain, IoT, Cloud Computing, and Cybersecurity solutions. Our team stays up-to-date with the latest technological advancements to provide cutting-edge solutions.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you ensure project security?</button>
+                        <div class="faq-answer">
+                            <p>We implement industry-standard security protocols, regular security audits, and follow best practices for data protection. Our team includes certified security experts who oversee all project implementations.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is your typical project timeline?</button>
+                        <div class="faq-answer">
+                            <p>Project timelines vary depending on scope and complexity. We typically provide a detailed timeline during initial consultations and maintain transparent communication throughout the project lifecycle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">Project Gallery</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <picture>
+                            <source
+                                srcset="images/ai-project-300.webp 300w,
+                                        images/ai-project-600.webp 600w,
+                                        images/ai-project-900.webp 900w"
+                                type="image/webp"
+                                sizes="(max-width: 768px) 100vw,
+                                       (max-width: 1200px) 50vw,
+                                       33vw">
+                            <img 
+                                src="images/ai-project-600.jpg"
+                                srcset="images/ai-project-300.jpg 300w,
+                                        images/ai-project-600.jpg 600w,
+                                        images/ai-project-900.jpg 900w"
+                                sizes="(max-width: 768px) 100vw,
+                                       (max-width: 1200px) 50vw,
+                                       33vw"
+                                alt="AI Project Implementation - Machine learning model visualization"
+                                loading="lazy"
+                                width="600"
+                                height="400">
+                        </picture>
+                        <div class="gallery-caption">AI Project Implementation</div>
+                    </div>
+        
+                    <div class="gallery-item">
+                        <picture>
+                            <source
+                                srcset="images/blockchain-300.webp 300w,
+                                        images/blockchain-600.webp 600w,
+                                        images/blockchain-900.webp 900w"
+                                type="image/webp"
+                                sizes="(max-width: 768px) 100vw,
+                                       (max-width: 1200px) 50vw,
+                                       33vw">
+                            <img 
+                                src="images/blockchain-600.jpg"
+                                srcset="images/blockchain-300.jpg 300w,
+                                        images/blockchain-600.jpg 600w,
+                                        images/blockchain-900.jpg 900w"
+                                sizes="(max-width: 768px) 100vw,
+                                       (max-width: 1200px) 50vw,
+                                       33vw"
+                                alt="Blockchain Solution - Decentralized network visualization"
+                                loading="lazy"
+                                width="600"
+                                height="400">
+                        </picture>
+                        <div class="gallery-caption">Blockchain Solution</div>
+                    </div>
+        
+                    <div class="gallery-item">
+                        <picture>
+                            <source
+                                srcset="images/iot-300.webp 300w,
+                                        images/iot-600.webp 600w,
+                                        images/iot-900.webp 900w"
+                                type="image/webp"
+                                sizes="(max-width: 768px) 100vw,
+                                       (max-width: 1200px) 50vw,
+                                       33vw">
+                            <img 
+                                src="images/iot-600.jpg"
+                                srcset="images/iot-300.jpg 300w,
+                                        images/iot-600.jpg 600w,
+                                        images/iot-900.jpg 900w"
+                                sizes="(max-width: 768px) 100vw,
+                                       (max-width: 1200px) 50vw,
+                                       33vw"
+                                alt="IoT Infrastructure - Smart device network"
+                                loading="lazy"
+                                width="600"
+                                height="400">
+                        </picture>
+                        <div class="gallery-caption">IoT Infrastructure</div>
                     </div>
                 </div>
             </div>
@@ -871,6 +1073,13 @@
                 header.style.boxShadow = 'none';
             }
         });
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
     </script>
 </body>
 </html>
