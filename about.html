@@ -5,54 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - InnovateTech Solutions</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">InnovateTech</a>
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                InnovateTech
+            </a>
             <nav>
-                <ul>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section id="about" class="section active">
             <div class="container">
-                <div class="hero-content">
-                    <h1>About Us</h1>
-                    <p>Discover the story behind InnovateTech and our mission to transform industries.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-content page-section">
-            <div class="container">
-                <div class="card">
-                    <h2>Our Mission</h2>
-                    <p>At InnovateTech Solutions, our mission is to empower businesses with cutting-edge technology solutions that drive growth, efficiency, and innovation. We strive to be at the forefront of technological advancements, providing our clients with the tools they need to succeed in the digital age.</p>
-                </div>
-
-                <div class="card">
-                    <h2>Our Values</h2>
-                    <ul>
-                        <li><i class="fas fa-lightbulb"></i> <strong>Innovation:</strong> We constantly push the boundaries of what's possible in technology.</li>
-                        <li><i class="fas fa-award"></i> <strong>Excellence:</strong> We are committed to delivering the highest quality solutions to our clients.</li>
-                        <li><i class="fas fa-handshake"></i> <strong>Integrity:</strong> We operate with transparency and honesty in all our business dealings.</li>
-                        <li><i class="fas fa-users"></i> <strong>Collaboration:</strong> We believe in the power of teamwork and partnership with our clients.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h2>Our Team</h2>
-                    <p>Our team consists of passionate experts in various fields of technology, including AI, blockchain, and IoT. With years of experience and a dedication to continuous learning, we are equipped to tackle the most complex technological challenges.</p>
+                <h2 class="section-title">About Us</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title">Our Mission</h3>
+                        <p>At InnovateTech, our mission is to empower businesses with innovative technology solutions that drive growth, efficiency, and sustainability in the digital age. We strive to be at the forefront of technological advancements, constantly pushing the boundaries of what's possible in AI, blockchain, and IoT.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Our Vision</h3>
+                        <p>Our vision is to be the global leader in providing cutting-edge AI, blockchain, and IoT solutions that transform industries and improve lives. We see a future where technology seamlessly integrates into every aspect of business and society, creating smarter, more efficient systems that benefit everyone.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Our Values</h3>
+                        <ul>
+                            <li><strong>Innovation:</strong> We constantly seek new ideas and approaches to solve complex problems and drive technological advancements.</li>
+                            <li><strong>Integrity:</strong> We uphold the highest ethical standards in all our dealings, ensuring trust and transparency with our clients and partners.</li>
+                            <li><strong>Collaboration:</strong> We believe in the power of teamwork and foster a collaborative environment both internally and with our clients.</li>
+                            <li><strong>Excellence:</strong> We strive for excellence in everything we do, from the solutions we develop to the service we provide.</li>
+                            <li><strong>Customer-centricity:</strong> Our clients' success is our success. We prioritize understanding and meeting their unique needs and challenges.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -60,8 +58,43 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 InnovateTech Solutions. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>InnovateTech</h3>
+                    <p>Empowering the future with innovative technology solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>123 Tech Street, Innovation City, 12345</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@innovatetech.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">🔗</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
