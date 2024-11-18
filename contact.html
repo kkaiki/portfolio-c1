@@ -5,73 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - InnovateTech Solutions</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">InnovateTech</a>
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                InnovateTech
+            </a>
             <nav>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section id="contact" class="section active">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Contact Us</h1>
-                    <p>Get in touch with our team of experts to discuss your technology needs.</p>
+                <h2 class="section-title">Contact Us</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title">Get in Touch</h3>
+                        <p>We'd love to hear from you. Whether you have a question about our services, need technical support, or want to explore how we can help your business, our team is ready to assist you.</p>
+                        <ul>
+                            <li><strong>General Inquiries:</strong> info@innovatetech.com</li>
+                            <li><strong>Sales:</strong> sales@innovatetech.com</li>
+                            <li><strong>Support:</strong> support@innovatetech.com</li>
+                            <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+                            <li><strong>Address:</strong> 123 Tech Street, Innovation City, CA 94043, USA</li>
+                        </ul>
+                        <p>Our office hours are Monday to Friday, 9:00 AM to 6:00 PM (PST).</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Send Us a Message</h3>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Send Message</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="contact-content page-section">
-            <div class="container">
-                <div class="card">
-                    <h2>Get in Touch</h2>
-                    <p>We'd love to hear from you. Please fill out the form below or use our contact information to reach us.</p>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> Email: info@innovatetech.com</li>
-                        <li><i class="fas fa-phone"></i> Phone: (123) 456-7890</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Address: 123 Tech Street, Innovation City, 12345</li>
-                    </ul>
-                </div>
-
-                <form class="contact-form card">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject:</label>
-                        <input type="text" id="subject" name="subject" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 InnovateTech Solutions. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>InnovateTech</h3>
+                    <p>Empowering the future with innovative technology solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>123 Tech Street, Innovation City, 12345</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@innovatetech.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">🔗</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
