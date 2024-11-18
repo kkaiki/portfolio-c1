@@ -538,6 +538,23 @@
         .gallery-item:hover .gallery-caption {
             transform: translateY(0);
         }
+
+        .typing-effect::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .stat-counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -567,9 +584,65 @@
             <div class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <h1 class="hero-title">Innovate Your Future with Cutting-Edge Technology</h1>
-                        <p class="hero-description">Empowering businesses with advanced AI, blockchain, and IoT solutions to drive growth and efficiency in the digital age.</p>
-                        <a href="#contact" class="cta-button">Get Started</a>
+                        <h1 class="hero-title">Revolutionize Your Business with Cutting-Edge Technology</h1>
+                        <p class="hero-description">
+                            At InnovateTech Solutions, we're not just keeping up with the future - we're creating it. Our advanced AI, blockchain, and IoT solutions are designed to propel your business into a new era of efficiency, security, and growth.
+                        </p>
+                        <p class="hero-description">
+                            From smart analytics that predict market trends to blockchain systems that ensure unparalleled security, and IoT networks that connect your entire operation - we offer the tools you need to stay ahead in the digital age.
+                        </p>
+                        <a href="#contact" class="cta-button">Start Your Innovation Journey</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2 class="section-title">Why Choose InnovateTech?</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Cutting-Edge Solutions</h3>
+                        <p>Stay ahead with our state-of-the-art technology implementations.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Expert Consultation</h3>
+                        <p>Benefit from our team of industry-leading tech consultants.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <h3>Scalable Growth</h3>
+                        <p>Our solutions grow with your business, ensuring long-term success.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Robust Security</h3>
+                        <p>Protect your assets with our advanced security measures.</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-item">
+                        <p class="testimonial-content">"InnovateTech's AI solution has transformed our data analysis process. We're now able to make faster, more informed decisions."</p>
+                        <p class="testimonial-author">- Sarah Johnson, CEO of DataDrive Inc.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="testimonial-content">"The blockchain implementation by InnovateTech has revolutionized our supply chain management. Transparency and efficiency have improved tenfold."</p>
+                        <p class="testimonial-author">- Michael Chen, Operations Manager at GlobalTrade Ltd.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="testimonial-content">"Thanks to InnovateTech's IoT ecosystem, our smart city project has become a reality. The impact on urban living has been remarkable."</p>
+                        <p class="testimonial-author">- Emma Rodriguez, Smart City Project Lead</p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Explore how our cutting-edge solutions can drive your success in the digital era.</p>
+                    <div class="cta-buttons">
+                        <a href="#services" class="cta-button">Explore Our Services</a>
+                        <a href="#contact" class="cta-button">Get in Touch</a>
                     </div>
                 </div>
             </div>
@@ -1006,6 +1079,8 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#news">News</a></li>
+                        <li><a href="#faq" class="nav-link">FAQ</a></li>
+                        <li><a href="#gallery" class="nav-link">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="#careers">Careers</a></li>
                     </ul>
