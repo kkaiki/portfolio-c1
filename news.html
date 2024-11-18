@@ -3,66 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News - InnovateTech Solutions</title>
+    <title>Latest News - InnovateTech Solutions</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">InnovateTech</a>
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                InnovateTech
+            </a>
             <nav>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="news.html" class="active">News</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section id="news" class="section active">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Latest News</h1>
-                    <p>Stay updated with the latest developments at InnovateTech.</p>
+                <h2 class="section-title">Latest News</h2>
+                <div class="grid">
+                    <div class="card">
+                        <p class="news-date">May 15, 2023</p>
+                        <h3 class="card-title">InnovateTech Launches Revolutionary AI-Powered Analytics Platform</h3>
+                        <p>We're thrilled to announce the launch of our new AI-powered analytics platform, InnovateTech Insights. This cutting-edge solution combines advanced machine learning algorithms with intuitive data visualization tools to help businesses make data-driven decisions faster and more accurately than ever before.</p>
+                        <p>Key features of InnovateTech Insights include:</p>
+                        <ul>
+                            <li>Real-time data processing and analysis</li>
+                            <li>Predictive modeling with high accuracy rates</li>
+                            <li>Customizable dashboards for different user roles</li>
+                            <li>Natural language query capabilities</li>
+                            <li>Integration with popular data sources and business tools</li>
+                        </ul>
+                        <p>Early adopters of InnovateTech Insights have reported significant improvements in their decision-making processes, with some seeing up to a 30% increase in operational efficiency. We're excited to see how this platform will transform businesses across various industries.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="news-content page-section">
-            <div class="container">
-                <article class="card">
-                    <h2>InnovateTech Launches New AI-Powered Analytics Platform</h2>
-                    <p class="date"><i class="far fa-calendar-alt"></i> May 15, 2023</p>
-                    <p>We're excited to announce the launch of our new AI-powered analytics platform, designed to help businesses make data-driven decisions faster and more accurately than ever before.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </article>
-
-                <article class="card">
-                    <h2>InnovateTech Partners with Leading IoT Device Manufacturer</h2>
-                    <p class="date"><i class="far fa-calendar-alt"></i> April 3, 2023</p>
-                    <p>InnovateTech has formed a strategic partnership with a leading IoT device manufacturer to bring cutting-edge smart home solutions to the market.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </article>
-
-                <article class="card">
-                    <h2>InnovateTech Recognized as Top Blockchain Solutions Provider</h2>
-                    <p class="date"><i class="far fa-calendar-alt"></i> March 12, 2023</p>
-                    <p>We're proud to announce that InnovateTech has been recognized as a top blockchain solutions provider by industry experts, highlighting our commitment to innovation and excellence.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </article>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 InnovateTech Solutions. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>InnovateTech</h3>
+                    <p>Empowering the future with innovative technology solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>123 Tech Street, Innovation City, 12345</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@innovatetech.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">🔗</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
