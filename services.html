@@ -3,75 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - InnovateTech Solutions</title>
+    <title>Our Services - InnovateTech Solutions</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">InnovateTech</a>
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                InnovateTech
+            </a>
             <nav>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section id="services" class="section active">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Our Services</h1>
-                    <p>Discover how our cutting-edge solutions can transform your business.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="services-content page-section">
-            <div class="container">
-                <div class="card">
-                    <i class="fas fa-brain feature-icon"></i>
-                    <h2>AI Solutions</h2>
-                    <p>Harness the power of artificial intelligence to optimize your business processes and gain valuable insights. Our AI solutions include:</p>
-                    <ul>
-                        <li>Machine Learning Models</li>
-                        <li>Natural Language Processing</li>
-                        <li>Computer Vision</li>
-                        <li>Predictive Analytics</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Learn More</a>
-                </div>
-
-                <div class="card">
-                    <i class="fas fa-link feature-icon"></i>
-                    <h2>Blockchain Integration</h2>
-                    <p>Implement secure and transparent blockchain solutions to revolutionize your data management and transactions. Our blockchain services include:</p>
-                    <ul>
-                        <li>Smart Contract Development</li>
-                        <li>Decentralized Application (DApp) Creation</li>
-                        <li>Supply Chain Management Solutions</li>
-                        <li>Cryptocurrency Integration</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Learn More</a>
-                </div>
-
-                <div class="card">
-                    <i class="fas fa-network-wired feature-icon"></i>
-                    <h2>IoT Ecosystems</h2>
-                    <p>Connect and control your devices with our advanced IoT solutions, enabling smart decision-making and automation. Our IoT services include:</p>
-                    <ul>
-                        <li>IoT Device Integration</li>
-                        <li>Real-time Data Analytics</li>
-                        <li>Smart Home and Office Solutions</li>
-                        <li>Industrial IoT Implementation</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Learn More</a>
+                <h2 class="section-title">Our Services</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3 class="card-title">AI Solutions</h3>
+                        <p>Harness the power of artificial intelligence to optimize your business processes and gain valuable insights. Our AI solutions include:</p>
+                        <ul>
+                            <li>Machine Learning Models for Predictive Analytics</li>
+                            <li>Natural Language Processing for Customer Interaction</li>
+                            <li>Computer Vision for Quality Control and Security</li>
+                            <li>AI-Driven Decision Support Systems</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔗</div>
+                        <h3 class="card-title">Blockchain Integration</h3>
+                        <p>Implement secure and transparent blockchain solutions to revolutionize your data management and transactions. Our blockchain services include:</p>
+                        <ul>
+                            <li>Smart Contract Development and Auditing</li>
+                            <li>Decentralized Application (DApp) Creation</li>
+                            <li>Supply Chain Tracking and Verification</li>
+                            <li>Cryptocurrency and Token Development</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📡</div>
+                        <h3 class="card-title">IoT Ecosystems</h3>
+                        <p>Connect and control your devices with our advanced IoT solutions, enabling smart decision-making and automation. Our IoT services encompass:</p>
+                        <ul>
+                            <li>IoT Device Design and Prototyping</li>
+                            <li>Sensor Network Implementation</li>
+                            <li>Real-time Data Analytics and Visualization</li>
+                            <li>IoT Security and Privacy Solutions</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -79,8 +73,43 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 InnovateTech Solutions. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>InnovateTech</h3>
+                    <p>Empowering the future with innovative technology solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>123 Tech Street, Innovation City, 12345</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@innovatetech.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">🔗</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
