@@ -4,77 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found | InnovateTech Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7C7EFF',
+                        secondary: '#12D892',
+                        background: '#0f172a',
+                        accent: '#FF85C0',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header id="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon"></div>
+<body class="bg-background text-white">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background bg-opacity-80 backdrop-blur-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <div class="w-10 h-10 mr-2 rounded-full bg-gradient-to-r from-primary via-secondary to-accent animate-spin"></div>
                 InnovateTech
             </a>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="news.html" class="nav-link">News</a></li>
-                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
-                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="hover:text-primary transition-colors duration-300">Home</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition-colors duration-300">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-primary transition-colors duration-300">Services</a></li>
+                    <li><a href="news.html" class="hover:text-primary transition-colors duration-300">News</a></li>
+                    <li><a href="faq.html" class="hover:text-primary transition-colors duration-300">FAQ</a></li>
+                    <li><a href="gallery.html" class="hover:text-primary transition-colors duration-300">Gallery</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors duration-300">Contact</a></li>
+                    <li><a href="careers.html" class="hover:text-primary transition-colors duration-300">Careers</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <div class="error-content">
-            <h1>404</h1>
-            <p class="error-message">Oops! Page not found</p>
-            <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-            <a href="/" class="cta-button">Go Back Home</a>
+    <main class="min-h-screen flex items-center justify-center">
+        <div class="max-w-2xl mx-auto text-center px-4">
+            <h1 class="text-9xl font-bold mb-4 animate-bounce">404</h1>
+            <p class="text-3xl mb-8">Oops! Page not found</p>
+            <p class="mb-8">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <a href="/" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 hover:bg-secondary hover:transform hover:-translate-y-1 hover:shadow-lg">Go Back Home</a>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>InnovateTech</h3>
+    <footer class="bg-white bg-opacity-5 mt-24 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4">InnovateTech</h3>
                     <p>Empowering the future with innovative technology solutions.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="careers.html">Careers</a></li>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-primary transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors duration-300">Services</a></li>
+                        <li><a href="news.html" class="hover:text-primary transition-colors duration-300">News</a></li>
+                        <li><a href="faq.html" class="hover:text-primary transition-colors duration-300">FAQ</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors duration-300">Contact</a></li>
+                        <li><a href="careers.html" class="hover:text-primary transition-colors duration-300">Careers</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Contact</h3>
                     <p>123 Tech Street, Innovation City, 12345</p>
                     <p>Phone: (123) 456-7890</p>
                     <p>Email: info@innovatetech.com</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
-                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">📸</a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">🔗</a>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-primary transition-colors duration-300" aria-label="Facebook">📘</a>
+                        <a href="#" class="text-2xl hover:text-primary transition-colors duration-300" aria-label="Twitter">🐦</a>
+                        <a href="#" class="text-2xl hover:text-primary transition-colors duration-300" aria-label="Instagram">📸</a>
+                        <a href="#" class="text-2xl hover:text-primary transition-colors duration-300" aria-label="LinkedIn">🔗</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-
 </body>
 </html>
